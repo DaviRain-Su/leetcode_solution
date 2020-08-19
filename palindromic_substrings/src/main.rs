@@ -17,21 +17,18 @@ fn count_substrings(s: String) -> i32 {
 
 fn is_palindromic(substring: &str) -> bool {
     let len = substring.len();
-    return if len == 0 {
-        true
-    } else {
-        for i in 0..(len / 2) {
-            let lhs = &substring[i..i + 1];
-            let rhs = &substring[len - i - 1..len - i];
-            if lhs.eq(rhs) {
-                continue;
-            } else {
-                return false;
-            }
+
+    for i in 0..(len / 2) {
+        let lhs = &substring[i..i + 1];
+        let rhs = &substring[len - i - 1..len - i];
+        if lhs.eq(rhs) {
+            continue;
+        } else {
+            return false;
         }
-        //遍历完所有正确返回true
-        true
     }
+    //遍历完所有正确返回true
+    true
 }
 
 fn main() {
