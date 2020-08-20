@@ -48,13 +48,22 @@ fn reverse(x: i32) -> i32 {
     result
 }
 
+fn reverse_v2(x: i32) -> i32 {
+    // println!("{}", x.signum());
+    x.abs()
+        .to_string()
+        .chars().rev()
+        .collect::<String>()
+        .parse::<i32>()
+        .unwrap_or(0) * x.signum()
 
+}
 fn main() {
-    let x = 1534236469;
+    // let x = 1534236469;
     // let x = 123;
-    // let x = -321;
+    let x = -321;
     // let x = 120;
-    let ret = reverse(x);
+    let ret = reverse_v2(x);
 
     println!("x = {}, ret = {}", x, ret);
     // println!("Hello, world!");
