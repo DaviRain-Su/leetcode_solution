@@ -3,3 +3,6 @@ target
 a.out
 .vscode
 Cargo.lock
+cmake-build-debug
+build
+main
